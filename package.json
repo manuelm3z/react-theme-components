@@ -1,6 +1,6 @@
 {
   "name": "react-theme-components",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "react-theme-components",
   "main": "lib/index.js",
   "module": "es/index.js",

@@ -1,7 +1,7 @@
 {
-  "name": "react-theme-context",
+  "name": "react-theme-components",
   "version": "1.0.0",
-  "description": "react-theme-context React component",
+  "description": "react-theme-components",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [

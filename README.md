@@ -1,2 +1,2 @@
-# react-theme-context
+# react-theme-components
 

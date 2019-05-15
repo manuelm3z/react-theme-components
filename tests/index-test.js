@@ -1,10 +1,17 @@
 import expect from 'expect'
 import React from 'react'
-import {render, unmountComponentAtNode} from 'react-dom'
+import {
+  render,
+  unmountComponentAtNode
+} from 'react-dom'
 
-import Component from 'src/'
+import {
+  Button,
+  InputText,
+  Title
+} from 'src/'
 
-describe('Component', () => {
+describe('Button', () => {
   let node
 
   beforeEach(() => {
@@ -15,9 +22,45 @@ describe('Component', () => {
     unmountComponentAtNode(node)
   })
 
-  it('displays a welcome message', () => {
-    render(<Component/>, node, () => {
-      expect(node.innerHTML).toContain('Welcome to React components')
+  it('displays text', () => {
+    render(<Button>This is a button</Button>, node, () => {
+      expect(node.innerHTML).toContain('This is a button')
+    })
+  })
+})
+
+describe('Title', () => {
+  let node
+
+  beforeEach(() => {
+    node = document.createElement('div')
+  })
+
+  afterEach(() => {
+    unmountComponentAtNode(node)
+  })
+
+  it('displays text', () => {
+    render(<Title>This is a title</Title>, node, () => {
+      expect(node.innerHTML).toContain('This is a title')
+    })
+  })
+})
+
+describe('InputText', () => {
+  let node
+
+  beforeEach(() => {
+    node = document.createElement('div')
+  })
+
+  afterEach(() => {
+    unmountComponentAtNode(node)
+  })
+
+  it('displays text', () => {
+    render(<InputText placeholder="This is a input type text" />, node, () => {
+      expect(node.innerHTML).toContain('This is a input type text')
     })
   })
 })

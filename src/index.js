@@ -1,9 +1,13 @@
-import React, {Component} from 'react'
+import Button from './components/Button';
+import InputText from './components/InputText';
+import Title from './components/Title';
+import {
+  ThemeProvider as Provider
+} from 'styled-components';
 
-export default class extends Component {
-  render() {
-    return <div>
-      <h2>Welcome to React components</h2>
-    </div>
-  }
-}
+export {
+  Button,
+  InputText,
+  Title,
+  Provider
+};

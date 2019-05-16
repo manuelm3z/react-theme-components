@@ -1,6 +1,4 @@
-import React, {
-  Component
-} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {
   get
@@ -26,27 +24,17 @@ const StyledButton = styled.button`
   }
 `;
 
-class Button extends Component {
-  render() {
-    const {
-      onClick,
-      style
-    } = this.props;
-    const filteredStyles = {};
-    if (style) {
-      filteredStyles.color = style.color;
-      filteredStyles.backgroundColor = style.backgroundColor;
-      filteredStyles.borderColor = style.borderColor;
-      filteredStyles.fontSize = style.fontSize;
-    }
-    return (
-      <StyledButton
-        onClick={onClick}
-        style={filteredStyles}
-        type="button"
-      >{this.props.children}</StyledButton>
-    );
-  }
-}
+const Button = ({ style, onClick, children }) => (
+  <StyledButton
+    onClick={onClick}
+    style={(style ? {
+      color: style.color,
+      backgroundColor: style.backgroundColor,
+      borderColor: style.borderColor,
+      fontSize: style.fontSize
+    } : {})}
+    type="button"
+  >{children}</StyledButton>
+)
 
 export default Button;

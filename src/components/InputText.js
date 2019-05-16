@@ -1,6 +1,4 @@
-import React, {
-  Component
-} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {
   get
@@ -36,21 +34,16 @@ const StyledInput = styled.input`
   }
 `;
 
-export default class InputText extends Component {
-  render() {
-    const style = this.props.style;
-    const filteredStyles = {};
-    if (style) {
-      filteredStyles.color = style.color;
-      filteredStyles.backgroundColor = style.backgroundColor;
-      filteredStyles.borderColor = style.borderColor;
-      filteredStyles.height = style.height;
-    }
-    return (
-      <StyledInput
-        {...this.props}
-        style={filteredStyles}
-        type="text" />
-    );
-  }
-}
+const InputText = ({ style, ...restProps }) => (
+  <StyledInput
+    { ...restProps }
+    style={(style ? {
+      color: style.color,
+      backgroundColor: style.backgroundColor,
+      borderColor: style.borderColor,
+      height: style.height
+    } : {})}
+    type="text" />
+);
+
+export default InputText;

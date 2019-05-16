@@ -1,6 +1,4 @@
-import React, {
-  Component
-} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {
   get
@@ -16,18 +14,13 @@ const StyledTitle = styled.h1`
   line-height: 38px;
 `;
 
-export default class Title extends Component {
-  render() {
-    const style = this.props.style;
-    const filteredStyles = {};
-    if (style) {
-      filteredStyles.color = style.color;
-      filteredStyles.fontSize = style.fontSize;
-    }
-    return (
-      <StyledTitle
-        style={filteredStyles}
-        >{this.props.children}</StyledTitle>
-    );
-  }
-}
+const Title = ({ style, children }) => (
+  <StyledTitle
+    style={(style ? {
+      color: style.color,
+      fontSize: style.fontSize
+    } : {})}
+    >{children}</StyledTitle>
+);
+
+export default Title;

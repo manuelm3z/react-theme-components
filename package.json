@@ -28,7 +28,7 @@
   "devDependencies": {
     "nwb": "0.25.x",
     "react": "^19.2.3",
-    "react-dom": "^16.8.6"
+    "react-dom": "^19.2.4"
   },
   "author": "",
   "homepage": "",
